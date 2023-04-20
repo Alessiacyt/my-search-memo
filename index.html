@@ -436,8 +436,22 @@ Google Map：<a href="https://goo.gl/maps/u8U5MBWxbcaow7Qe8" target="_blank">403
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+		table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+table td, table th {
+  padding: 0.2cm;
+  border: 1px solid black;
+}
+
+
+	</style>
+
 	<script>
-		var spreadsheetId = '2PACX-1vS2pCm03VehKMIVnpwBnSBsTt53Vm1W7DgmxS0UVtp2oKAgBQ2APChBe9_fdY5iqguhLXVjbrZlzn4q';
+		var spreadsheetId = '1j5EBJbwkQg7DFmycZWTEX498UU9-ptbNKl944q_NzzE';
 		var range = 'Sheet1!A:C';
 		var apiKey = 'AIzaSyDOmwONOhEAbpI7FpojHXdJpGf6DXbfqVY';
 		var url = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '/values/' + range + '?key=' + apiKey;
@@ -458,7 +472,12 @@ Google Map：<a href="https://goo.gl/maps/u8U5MBWxbcaow7Qe8" target="_blank">403
 </head>
 <body>
 	<h2>訪客留言</h2>
-	<table id="myTable">
+<ul>
+留言表單：<a href="https://docs.google.com/forms/d/e/1FAIpQLSfjV959HG-QZMWFH8YUmckkIkoRpxwrRmPVmhjmx739Cf1omA/viewform?usp=share_link" target="_blank">點此進入留言表單</a>
+<p>
+
+<table id="myTable" style="border: 1px solid black; border-collapse: collapse;">
+
 		<thead>
 			<tr>
 				<th>時間</th>
