@@ -45,6 +45,7 @@
 		<button class="tablinks" onclick="openTab(event, 'page2')">II.遊玩</button>
 		<button class="tablinks" onclick="openTab(event, 'page3')">III.旅宿</button>
 		<button class="tablinks" onclick="openTab(event, 'page4')">IV.其他</button>
+		<button class="tablinks" onclick="openTab(event, 'page5')">V.訪客留言</button>
 
 	</div>
 
@@ -395,6 +396,95 @@ Google Map：<a href="https://goo.gl/maps/u8U5MBWxbcaow7Qe8" target="_blank">403
 
 <div id="chapter10">
 <h2>補充</h2>
+      <ul>
+        <li>補充1
+        <li>補充2
+      </ul>
+</div>
+<button onclick="window.scrollTo(0, 0)">回到頂部</button>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 第五頁 -->
+<div id="page5" class="tabcontent">
+
+		<!-- 第五頁目錄 -->
+		<div style="display: flex;">
+			<div style="flex: 1 1 20%;">
+				目錄
+				<nav>
+					<a href="#chapter99">訪客留言</a>
+					<p>
+					<a href="#chapter98">站長表示：</a>
+				</nav>
+			</div>
+
+			<!-- 第四頁內文 -->
+			<div style="flex: 1 1 80%;">
+				<!-- 章節 -->
+					<h1>V.訪客留言</h1>
+
+<div id="chapter99">
+<h2>訪客留言</h2>
+
+      <ul>
+<head>
+	<title>Google Sheets API Demo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th>時間</th>
+				<th>訪客</th>
+				<th>我想說的是：</th>
+
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		var spreadsheetId = '1j5EBJbwkQg7DFmycZWTEX498UU9-ptbNKl944q_NzzE';
+		var range = '表單回應 1!A:C';
+		var apiKey = 'b0dbf105bbc6c283e4ba3cc97b674e5c2e900e02';
+		var url = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '/values/' + range + '?key=' + apiKey;
+
+		$.get(url, function(data) {
+			var rows = data.values;
+			var html = '';
+			for (var i = 1; i < rows.length; i++) {
+				html += '<tr>';
+				for (var j = 0; j < rows[i].length; j++) {
+					html += '<td>' + rows[i][j] + '</td>';
+				}
+				html += '</tr>';
+			}
+			$('#myTable tbody').html(html);
+		});
+	</script>
+</body>
+
+
+
+
+
+
+      </ul>
+
+</div>	
+
+<div id="chapter98">
+<h2>站長表示：</h2>
       <ul>
         <li>補充1
         <li>補充2
