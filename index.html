@@ -53,6 +53,7 @@ body {
 		<button class="tablinks" onclick="openTab(event, 'page3')">III.旅宿</button>
 		<button class="tablinks" onclick="openTab(event, 'page4')">IV.其他</button>
 		<button class="tablinks" onclick="openTab(event, 'page5')">V.訪客留言</button>
+		<button class="tablinks" onclick="openTab(event, 'page6')">VI.占卜測試</button>
 
 	</div>
 
@@ -516,7 +517,7 @@ Google Map：<a href="https://goo.gl/maps/u8U5MBWxbcaow7Qe8" target="_blank">403
 				</nav>
 			</div>
 
-			<!-- 第四頁內文 -->
+			<!-- 第五頁內文 -->
 			<div style="flex: 1 1 80%;">
 				<!-- 章節 -->
 					<h1>V.訪客留言</h1>
@@ -568,6 +569,12 @@ table td, table th {
 <p>
 歡迎寫下想說的話及推薦店家，會持續更新上去<span>&#129303;</span>
 <p>
+
+
+
+
+
+
 <table id="myTable" style="border: 2px solid black; border-collapse: collapse;background-color: white;">
 
 		<thead>
@@ -616,6 +623,80 @@ table td, table th {
 		</div>
 	</div>
 
+<!-- 第六頁 -->
+<div id="page6" class="tabcontent">
+
+		<!-- 第六頁目錄 -->
+		<div style="display: flex;">
+			<div style="flex: 1 1 20%;">
+				目錄
+				<nav>
+					<a href="#chapter89">塔羅占卜</a>
+					<p>
+					<a href="#chapter88">其他</a>
+				</nav>
+			</div>
+
+			<!-- 第六頁內文 -->
+			<div style="flex: 1 1 80%;">
+					<h1>VI.占卜測試</h1>
+
+<div id="chapter89">
+<h2>塔羅占卜</h2>
+
+ <button onclick="randomCard()">占卜！</button>
+  
+  <h2 id="cardName"></h2>
+  
+  <p id="cardMeaning"></p>
+
+  <p id="cardAdvice"></p>
+
+  <script>
+    // 當按下「占卜！」按鈕時觸發的函式
+    function randomCard() {
+      // 讀取CSV檔案
+      fetch('tarot_data.csv')
+        .then(response => response.text())
+        .then(data => {
+          // 將CSV資料轉換成陣列
+          const lines = data.split('\n');
+          // 移除表頭行
+          lines.shift();
+          // 隨機選擇一張牌
+          const randomIndex = Math.floor(Math.random() * lines.length);
+          const selectedCard = lines[randomIndex].split(',');
+          
+          // 更新網頁上的牌名和牌義
+          document.getElementById("cardName").textContent = selectedCard[0];
+          document.getElementById("cardMeaning").textContent = selectedCard[1];
+          document.getElementById("cardAdvice").textContent = selectedCard[2];
+        })
+        .catch(error => {
+          console.error('無法讀取塔羅牌資料檔案：', error);
+        });
+    }
+  </script>
+
+
+
+</div>	
+
+<div id="chapter88">
+<h2>其他</h2>
+      <ul>
+        <li>保留1
+        <li>保留2
+      </ul>
+</div>
+<button onclick="window.scrollTo(0, 0)">回到頂部</button>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 <!-- 頁籤切換腳本 -->
