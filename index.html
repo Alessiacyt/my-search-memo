@@ -632,8 +632,7 @@ table td, table th {
 				目錄
 				<nav>
 					<a href="#chapter89">塔羅占卜</a>
-					<p>
-					<a href="#chapter88">其他</a>
+			
 				</nav>
 			</div>
 
@@ -644,7 +643,7 @@ table td, table th {
 <div id="chapter89">
 <h2>塔羅占卜</h2>
 
- <button onclick="randomCard()">占卜！</button>
+ <button onclick="randomCard()">抽選牌卡 !</button>
   
   <h2 id="cardName"></h2>
   
@@ -653,7 +652,7 @@ table td, table th {
   <p id="cardAdvice"></p>
 
   <script>
-    // 當按下「占卜！」按鈕時觸發的函式
+    // 當按下「抽選牌卡 !」按鈕時觸發的函式
     function randomCard() {
       // 讀取CSV檔案
       fetch('tarot_data.csv')
@@ -668,6 +667,7 @@ table td, table th {
           const selectedCard = lines[randomIndex].split(',');
           
           // 更新網頁上的牌名和牌義
+
           document.getElementById("cardName").textContent = selectedCard[0];
           document.getElementById("cardMeaning").textContent = selectedCard[1];
           document.getElementById("cardAdvice").textContent = selectedCard[2];
@@ -679,17 +679,8 @@ table td, table th {
   </script>
 
 
-
-</div>	
-
-<div id="chapter88">
-<h2>其他</h2>
-      <ul>
-        <li>保留1
-        <li>保留2
-      </ul>
 </div>
-<button onclick="window.scrollTo(0, 0)">回到頂部</button>
+
 
 
 					</ul>
